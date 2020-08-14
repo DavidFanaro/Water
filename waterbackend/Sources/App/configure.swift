@@ -14,7 +14,7 @@ public func configure(_ app: Application) throws {
         database: Environment.get("DATABASE_NAME") ?? "water"
     ), as: .psql)
 
-    app.migrations.add([UserMigration(),DropMigration()])
+    app.migrations.add([UserMigration(),DropMigration(),TokenMigration()])
     
     // register routes
     try routes(app)

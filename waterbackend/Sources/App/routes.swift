@@ -10,6 +10,10 @@ func routes(_ app: Application) throws {
         return "Hello, world!"
     }
 
-    try app.register(collection: CreateUsersController())
+    try app.register(collection: SignupController())
+    try app.register(collection: LoginController())
+    
+    
+    
     
 }
