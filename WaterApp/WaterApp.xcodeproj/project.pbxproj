@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBBC3E124E78CBA00F38B39 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBBC3E024E78CBA00F38B39 /* LoginView.swift */; };
+		1BBBC3E324E7999000F38B39 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBBC3E224E7999000F38B39 /* SignupView.swift */; };
 		1BF2CE0424E45FE9004E7BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2CE0324E45FE9004E7BCA /* AppDelegate.swift */; };
 		1BF2CE0624E45FE9004E7BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2CE0524E45FE9004E7BCA /* SceneDelegate.swift */; };
 		1BF2CE0824E45FE9004E7BCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2CE0724E45FE9004E7BCA /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BBBC3E024E78CBA00F38B39 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1BBBC3E224E7999000F38B39 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		1BF2CE0024E45FE9004E7BCA /* WaterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF2CE0324E45FE9004E7BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BF2CE0524E45FE9004E7BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BBBC3DD24E78C6800F38B39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BF2CE0724E45FE9004E7BCA /* ContentView.swift */,
+				1BBBC3E024E78CBA00F38B39 /* LoginView.swift */,
+				1BBBC3E224E7999000F38B39 /* SignupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1BBBC3DE24E78C8000F38B39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1BBBC3DF24E78C8F00F38B39 /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelViews;
+			sourceTree = "<group>";
+		};
 		1BF2CDF724E45FE8004E7BCA = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +84,11 @@
 		1BF2CE0224E45FE9004E7BCA /* WaterApp */ = {
 			isa = PBXGroup;
 			children = (
+				1BBBC3DF24E78C8F00F38B39 /* ModelViews */,
+				1BBBC3DE24E78C8000F38B39 /* Models */,
+				1BBBC3DD24E78C6800F38B39 /* Views */,
 				1BF2CE0324E45FE9004E7BCA /* AppDelegate.swift */,
 				1BF2CE0524E45FE9004E7BCA /* SceneDelegate.swift */,
-				1BF2CE0724E45FE9004E7BCA /* ContentView.swift */,
 				1BF2CE0924E45FEA004E7BCA /* Assets.xcassets */,
 				1BF2CE0E24E45FEA004E7BCA /* LaunchScreen.storyboard */,
 				1BF2CE1124E45FEA004E7BCA /* Info.plist */,
@@ -148,7 +178,9 @@
 			files = (
 				1BF2CE0424E45FE9004E7BCA /* AppDelegate.swift in Sources */,
 				1BF2CE0624E45FE9004E7BCA /* SceneDelegate.swift in Sources */,
+				1BBBC3E124E78CBA00F38B39 /* LoginView.swift in Sources */,
 				1BF2CE0824E45FE9004E7BCA /* ContentView.swift in Sources */,
+				1BBBC3E324E7999000F38B39 /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

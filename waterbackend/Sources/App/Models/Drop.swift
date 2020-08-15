@@ -27,12 +27,16 @@ final class Drop: Model{
     
     init() {}
     
-    init(id:UUID?, title:String, content:String) {
-        self.id = id
+    init(title:String, content:String, user:User) {
         self.title = title
         self.drop_content = content
     }
     
+}
+
+struct DropContent: Content, Codable {
+    var title:String
+    var content:String
 }
 
 extension Drop: Codable, Content{}

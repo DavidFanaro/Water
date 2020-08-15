@@ -38,3 +38,16 @@ final class Token: Model {
      
     }
 }
+
+extension Token: Content{}
+
+
+
+extension Token: ModelTokenAuthenticatable{
+    static let valueKey = \Token.$value
+    static let userKey = \Token.$user
+
+    var isValid: Bool {
+        true
+    }
+}
