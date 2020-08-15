@@ -13,6 +13,8 @@ struct LoginView: View {
     @State var password = ""
     
     var body: some View {
+        
+        
         ZStack {
             Image("AppBackground")
                 .resizable() .edgesIgnoringSafeArea(.all).blur(radius: 10)

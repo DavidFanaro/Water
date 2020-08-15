@@ -16,6 +16,8 @@ struct SignupView: View {
     
     var body: some View {
         ZStack {
+            
+            
             Image("AppBackground")
                 .resizable() .edgesIgnoringSafeArea(.all).blur(radius: 10)
 

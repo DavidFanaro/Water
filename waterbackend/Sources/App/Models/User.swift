@@ -31,6 +31,9 @@ final class User: Model {
     @Children(for: \.$user)
     var drops:[Drop]
     
+    @Children(for: \.$user)
+    var token:[Token]
+    
 
     
     init() {}

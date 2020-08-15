@@ -20,10 +20,18 @@ class LoginController: RouteCollection{
     
     func login(req: Request) throws -> EventLoopFuture<Token>{
         let user = try req.auth.require(User.self)
-        let token = try user.createToken()
-        return token.save(on: req.db).map{
-            token
+        let _ = user.$token.query(on: req.db).all().map{ token in
+            for t in token{
+                let _ = t.delete(on: req.db)
+            }
         }
+        
+        
+        let newToken = try user.createToken()
+        return newToken.create(on: req.db).map{
+            newToken
+        }
+        
     }
     func tokenlogin(req: Request) throws -> User{
         try req.auth.require(User.self)
