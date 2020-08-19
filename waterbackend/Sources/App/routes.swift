@@ -15,6 +15,4 @@ func routes(_ app: Application) throws {
     try app.register(collection: DropCreationController())
     try app.register(collection: DropController())
     
-    
-    
 }
