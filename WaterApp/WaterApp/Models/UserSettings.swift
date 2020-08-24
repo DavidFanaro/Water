@@ -16,6 +16,7 @@ class UserSettings: ObservableObject {
     }
     @Published var userdata: UserData?
     @Published var isLoggedin: Bool = false
+    @Published var post:[Drop] = []
     
     func loginUser(login username: String, with password: String){
         let loginString = String(format: "%@:%@", username, password)
@@ -101,6 +102,29 @@ class UserSettings: ObservableObject {
         
     }
     
-    
+    func getAllPost(userToken: String){
+        
+        let loginString = userToken
+        guard let url = URL(string: "http://127.0.0.1:8080/drops/all") else{return }
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(loginString)", forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request){ (data, response, error) in
+                   
+                   
+            guard let data = data else{return}
+                   
+            guard let json = try? JSONDecoder().decode([Drop].self, from: data) else{return}
+                   
+            DispatchQueue.main.async {
+                
+                print(json)
+                self.post = json
+                
+                
+            }
+                   
+        }.resume()
+        
+    }
     
 }

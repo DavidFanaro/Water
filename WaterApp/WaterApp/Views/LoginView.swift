@@ -103,6 +103,9 @@ struct LoginView: View {
                 }
             }.onDisappear{
 //                self.settings.getUser(user: self.settings.userToken)
+                print(self.settings.getAllPost(userToken: self.settings.userToken))
+                self.settings.getAllPost(userToken: self.settings.userToken)
+                
             }
             
             

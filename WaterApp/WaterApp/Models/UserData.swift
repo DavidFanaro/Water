@@ -25,3 +25,12 @@ struct UserToken: Codable {
     var value: String
     
 }
+
+
+struct Drop: Codable, Identifiable {
+    
+    var id: String
+    var title: String
+    var drop_content: String
+    var user: UserId
+}

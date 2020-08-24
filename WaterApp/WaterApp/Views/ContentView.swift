@@ -22,14 +22,21 @@ struct ContentView: View {
 struct LoginChecker: View {
     
     @EnvironmentObject var settings: UserSettings
+    @ObservedObject var loader = Postloader()
+    
     
     @ViewBuilder
     var body: some View {
         
         VStack{
             if settings.isLoggedin{
-                Text("Logged in as \(self.settings.userToken)")
-                Text("Logged in as \(self.settings.userdata?.firstname ?? "Error")")
+                if !self.settings.post.isEmpty {
+                    AllDropsView(drops: self.settings.post).environmentObject(settings)
+                }else{
+                    Text("Error get drops!!!!!!!")
+                }
+               
+                
                 
             }else{
                 LoginOrSignUpView().environmentObject(settings)
@@ -37,6 +44,7 @@ struct LoginChecker: View {
         }
         
     }
+    
 }
 
 struct LoginOrSignUpView: View {
