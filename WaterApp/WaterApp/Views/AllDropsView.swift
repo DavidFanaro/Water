@@ -13,6 +13,8 @@ struct AllDropsView: View {
     @EnvironmentObject var settings: UserSettings
     @State var showCreate:Bool = false
 
+    @Environment(\.presentationMode) var presentation
+
     
     var drops: [Drop]
     
@@ -72,8 +74,9 @@ struct AllDropsView: View {
                     Text("Refresh")
                 }))
                 .background(Image("AppBackground").resizable() .edgesIgnoringSafeArea(.all).blur(radius: 10))
+                
             }.sheet(isPresented: self.$showCreate){
-                CreateDropDetailView(isPersented: self.$showCreate)
+                CreateDropDetailView(isPersented: self.$showCreate).environmentObject(self.settings)
             }
         
             VStack{
@@ -91,8 +94,8 @@ struct AllDropsView: View {
     }
 }
 
-struct AllDropsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AllDropsView(drops: [Drop(id: "1", title: "Test", drop_content: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", user: UserId(id: "David"))])
-    }
-}
+//struct AllDropsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AllDropsView(drops: [Drop(id: "1", title: "Test", drop_content: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", user: "David")])
+//    }
+//}

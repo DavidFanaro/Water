@@ -35,7 +35,7 @@ struct LoginChecker: View {
                 }else{
                     Text("Error get drops!!!!!!!")
                 }
-               
+                
                 
                 
             }else{
@@ -49,13 +49,13 @@ struct LoginChecker: View {
 
 struct LoginOrSignUpView: View {
     @EnvironmentObject var settings: UserSettings
-
+    
     @State var showSignup:Bool = false
     @State var showLogin:Bool = false
     var body: some View{
         ZStack{
             Image("AppBackground")
-            .resizable() .edgesIgnoringSafeArea(.all).blur(radius: 10)
+                .resizable() .edgesIgnoringSafeArea(.all).blur(radius: 10)
             
             VStack{
                 Button(action: {
@@ -80,7 +80,7 @@ struct LoginOrSignUpView: View {
                 Button(action: {
                     self.showLogin.toggle()
                 }) {
-                   VStack {
+                    VStack {
                         //[…]
                         Text("LOGIN")
                             .font(.headline)

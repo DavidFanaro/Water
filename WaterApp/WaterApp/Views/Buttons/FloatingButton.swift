@@ -20,6 +20,7 @@ struct FloatingButton: View {
             .padding(15)
                 .background(Color(.gray))
                 .mask(Circle())
+            
         }
     }
 }

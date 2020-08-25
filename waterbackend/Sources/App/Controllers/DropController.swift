@@ -15,9 +15,18 @@ class DropController: RouteCollection {
         //path.webSocket("drops","all","socket", onUpgrade: getAllDropsSocket)
     }
     
-    func getAllDrops(req: Request) throws -> EventLoopFuture<[Drop]> {
+    func getAllDrops(req: Request) throws -> EventLoopFuture<[DropResponse]> {
+        var responseDrops:[DropResponse] = []
         
-        return Drop.query(on: req.db).all()
+        return Drop.query(on: req.db).with(\.$user).all().map{ drops -> [DropResponse] in
+            for drop in drops{
+                let newDrop = DropResponse(userid: drop.user.id, id: drop.id, username: drop.user.username, title: drop.title, content: drop.drop_content)
+                responseDrops.append(newDrop)
+            }
+            return responseDrops
+        }
+
+        
     }
     
     

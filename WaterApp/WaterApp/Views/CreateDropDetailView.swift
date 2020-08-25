@@ -9,10 +9,12 @@
 import SwiftUI
 
 struct CreateDropDetailView: View {
+    @EnvironmentObject var settings: UserSettings
+
     
     @Binding var isPersented: Bool
     @State var title: String = ""
-    @State var message: String = ""
+    @State var content: String = ""
     
     
     var body: some View {
@@ -54,7 +56,7 @@ struct CreateDropDetailView: View {
                     
                 
                 
-                TextView(text: self.$message)
+                TextView(text: self.$content)
                     .background(Color.gray.opacity(0.5))
                     .cornerRadius(30)
                     .padding()
@@ -62,8 +64,10 @@ struct CreateDropDetailView: View {
                 
                 Spacer()
                 
+                
+                //posting button
                 Button(action: {
-                   
+                    self.settings.createPost(userToken: self.settings.userToken, title: self.title, content: self.content)
                     self.isPersented = false
                 }){
                     
@@ -82,7 +86,6 @@ struct CreateDropDetailView: View {
                     
                 }
                 Button(action: {
-                    
                     self.isPersented = false
                 }){
                     
@@ -103,6 +106,7 @@ struct CreateDropDetailView: View {
                 
                 
             }.onDisappear{
+                self.settings.getAllPost(userToken: self.settings.userToken)
             }
         }
         

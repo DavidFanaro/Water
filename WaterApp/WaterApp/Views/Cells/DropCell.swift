@@ -22,14 +22,14 @@ struct DropCell: View {
             
             VStack{
                 HStack {
-                    Text("User: \(drop.user.id)").padding(.trailing)
+                    Text("User: \(drop.username)").padding(.trailing)
                     Text(drop.title).padding(.leading, 40)
                     Spacer()
                 }.padding()
                 
                 VStack {
                     
-                    Text(drop.drop_content).lineLimit(20)
+                    Text(drop.content).lineLimit(20)
                 }
                 
             }
@@ -40,10 +40,10 @@ struct DropCell: View {
     }
 }
 
-struct DropCell_Previews: PreviewProvider {
-    static var previews: some View {
-        DropCell(drop: Drop(id: "1", title: "Test", drop_content: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", user: UserId(id: "3")))
-            .previewLayout(.fixed(width: 300, height: 250))
-
-    }
-}
+//struct DropCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DropCell(drop: Drop(id: "1", title: "Test", drop_content: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", user: UserId(id: "3")))
+//            .previewLayout(.fixed(width: 300, height: 250))
+//
+//    }
+//}

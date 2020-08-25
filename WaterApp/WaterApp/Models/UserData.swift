@@ -28,9 +28,15 @@ struct UserToken: Codable {
 
 
 struct Drop: Codable, Identifiable {
-    
+    var userid: String
     var id: String
+    var username: String
     var title: String
-    var drop_content: String
-    var user: UserId
+    var content: String
+}
+
+
+struct PostRequset : Codable{
+    var title: String
+    var content: String
 }

@@ -32,6 +32,10 @@ final class Drop: Model{
         self.drop_content = content
     }
     
+    func response(){
+        let res = DropResponse(username: user.username, title: title, content: drop_content)
+    }
+    
 }
 
 struct DropContent: Content, Codable {
